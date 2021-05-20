@@ -1,4 +1,4 @@
-*{
+/* *{
     box-sizing: border-box;
   }
   
@@ -42,20 +42,27 @@
   }
   
   
-  img {
-    max-height: 300px;
-    max-width: 100%;
+img {
+    float:left;
+    /* margin-right: 1%; */
+    /* marginbottom: .5em; */
+    /* max-heig-ht: 300px; */
+    /* max-width: 100%;
     margin: 0 auto;
-  }
+    display: inline;   
+     clear: both;
+  } */
+
   
-  li {
+  #results {
     display: inline-block;
     list-style: none;
     margin: 20px 40px 20px 0px;
     font-size: 1.2em;
+    font-style: oblique;
     
   }
-  
+/*   
   footer {
     background: #264653;
     width: 100%;
@@ -76,4 +83,4 @@
     box-sizing: border-box;
     float: left;
     width: 50%;
-  }
+  } */ */
