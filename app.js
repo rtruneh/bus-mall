@@ -40,18 +40,14 @@ const renderItems = function(){
     rightItemP.textContent = rightItem.item;
 };
 
+//randomly select picture
 function itemSelector(){
     let leftIndex = Math.floor(Math.random() * MallItems.allItems.length)
-    console.log(MallItems.allItems)
-    console.log(leftIndex)
     let middleIndex = Math.floor(Math.random() * MallItems.allItems.length)
-    console.log(middleIndex)
     let rightIndex = Math.floor(Math.random() * MallItems.allItems.length)
-    console.log(rightIndex)
 
 while (rightIndex === leftIndex || rightIndex === middleIndex) {
     rightIndex = Math.floor(Math.random() * MallItems.allItems.length)
-    console.log(rightIndex)
 }
 
 leftItem = MallItems.allItems[leftIndex];
@@ -71,18 +67,21 @@ function displayVotes(){
     }
 };
 
+
 function handleClick(event){
-    console.log(event.target)
     const clickedTarget = event.target;
     const id = clickedTarget.id;
     if (totalClicks < 25){
-    if (id === 'left_item_img' || id === 'middle_item_img' || id === 'right_item_img' ){
+    if (id === 'left_item_img' || id === 'middle_item_img' || id === 'right_item_img' )
+    {
         if (id === 'left_item_img'){
-            leftItem.clicks;
+            leftItem.clicks++;
         } else if (id === 'middle_item_img'){
             middleItem.clicks++;
+
         }else {
             rightItem.clicks++;
+
         }
         totalClicks++;
         leftItem.timesShown++;
@@ -93,10 +92,13 @@ function handleClick(event){
         renderItems();
     }
     }
+
 if(totalClicks === 25){
     allItems.removeEventListener('click', handleClick);
     displayVotes()
+
 }
+
 };
 
 new MallItems('Bag', 'images/bag.jpeg');

@@ -1,22 +1,23 @@
-/* *{
+*{
     box-sizing: border-box;
-  }
+  } 
   
   body {
     background: #E9C46A fixed;
-  
   }
-  
-  header {
-    background: #18ad3155;
-    width: 100%;
-  }
-  
-  nav {
-    max-width:  900px;
-    margin: 0 auto;
-    overflow: hidden
-  }
+
+#title {
+  background-color: #e76f51;
+  font-style: oblique;
+  font-size: 50pt;
+  text-align: center;
+
+}
+
+h1{
+  font-style: oblique;
+}
+
   
   main{
     max-width: 900px;
@@ -24,6 +25,7 @@
     overflow: hidden;
   }
   
+  /* keeps results to left of pictures */
   main > *{
     float:left;
   }
@@ -31,30 +33,19 @@
   main > :nth-child(odd){
     width:25%
   }
+   
   
-  main > :nth-child(2){
-    width: 50%;
+#pics img {
+  
+    width: 100px;
+    height: 100px;
+    margin: 5px; /*space between photos */
+    float: left;
   }
-  
-  main ul, main li {
-    padding: 0;
-    margin: 10px 0;
-  }
-  
-  
-img {
-    float:left;
-    /* margin-right: 1%; */
-    /* marginbottom: .5em; */
-    /* max-heig-ht: 300px; */
-    /* max-width: 100%;
-    margin: 0 auto;
-    display: inline;   
-     clear: both;
-  } */
-
   
   #results {
+    background-color: #264653 ;
+    color:#f4a261;
     display: inline-block;
     list-style: none;
     margin: 20px 40px 20px 0px;
@@ -62,7 +53,16 @@ img {
     font-style: oblique;
     
   }
-/*   
+
+  #para{
+    background-color: #e76f51;
+    color:#264653;
+    font-size: 1.2em;
+    font-style: oblique;
+    padding: 100px;
+  }
+
+  
   footer {
     background: #264653;
     width: 100%;
@@ -70,7 +70,6 @@ img {
     clear:  both;
     position: absolute;
   }
-  
   footer div {
     background-color: #2a9d8f;
     color: whitesmoke;
@@ -78,9 +77,9 @@ img {
     margin: 0 auto;
   }
   
-  section div {
+  /*section div {
     padding: 7px;
     box-sizing: border-box;
     float: left;
     width: 50%;
-  } */ */
+  } */ 
