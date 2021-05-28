@@ -1,66 +1,88 @@
 *{
     box-sizing: border-box;
+    margin: 0 auto; 
+    padding: 0;
   } 
   
   body {
-    background: #E9C46A fixed;
+    background: #E9C46A;
+    margin: 0 auto;
+    width: 960px;
+        display: fixed;
   }
 
-#title {
+/* ----------title---------- */
+
+#title{
+  height: 50px;
+  width: 100%;
+  margin: 30px;
+}
+#busmall {
   background-color: #e76f51;
   font-style: oblique;
   font-size: 50pt;
   text-align: center;
-
-}
-
-h1{
   font-style: oblique;
 }
 
-  
-  main{
-    max-width: 900px;
+  /* ----------results----------*/
+
+  #results{
+    max-width: 500px;
     margin: 0 auto;
-    overflow: hidden;
+    width: 200px;
+    padding: 11px;
+
+    position: sticky;
+    background-color: #264653 ;
+    color:#f4a261;
+    display: inline-block;
+    margin: 20px 40px 20px 0px;
+    font-size: 1.2em;
+    font-style: oblique;
   }
-  
-  /* keeps results to left of pictures */
-  main > *{
-    float:left;
+
+  li{
+    list-style: none;
+
   }
   
   main > :nth-child(odd){
     width:25%
   }
-   
-  
-#pics img {
-  
-    width: 100px;
-    height: 100px;
-    margin: 5px; /*space between photos */
-    float: left;
-  }
-  
-  #results {
-    background-color: #264653 ;
-    color:#f4a261;
-    display: inline-block;
-    list-style: none;
-    margin: 20px 40px 20px 0px;
-    font-size: 1.2em;
-    font-style: oblique;
-    
+
+
+    /* ----------results----------*/
+
+
+   #all-items{
+      border: 2px solid black;
+      padding: 7px;
+      width: 700px;
+      height: 500px;
+      text-align: center;
+      float: right;
   }
 
-  #para{
+
+img {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    /* space between photos  */
+    float: left;
+  } 
+
+  
+
+  /* #para{
     background-color: #e76f51;
     color:#264653;
     font-size: 1.2em;
     font-style: oblique;
     padding: 100px;
-  }
+  } */
 
   
   footer {
@@ -69,12 +91,14 @@ h1{
     height: 50px;
     clear:  both;
     position: absolute;
-  }
-  footer div {
-    background-color: #2a9d8f;
+  } 
+   footer div {
+    background-color: #e76f51;
     color: whitesmoke;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
   }
   
   /*section div {
