@@ -1,62 +1,52 @@
 "use strict"
 
-// const results = document.getElementById("item-clicks");
-// const allItems = document.getElementById("all-items");
-// const rightItemImg = document.getElementById("right_item_img");
-// const middleItemImg = document.getElementById("middle_item_img");
-// const leftItemImg = document.getElementById("left_item_img");
-// const leftItemP = document.getElementById("left_item_p");
-// const middleItemP = document.getElementById("middle_item_p");
-// const rightItemP = document.getElementById("right_item_p");
-const productRank = {
-//keep track of total clicks
-totalClicks: 0,
-voteRounds: 25,
 
-//differentiating the images
-leftItem: null,
-middleItem: null, 
-rightItem: null,
-}
+let allItems = [];
+
+//keep track of total clicks
+let totalClicks= 0;
+let voteRounds= 25;
+
 //constructor function
-const MallItems = function(item, imagePath){
+function MallItems(item, imagePath){
     this.item = item;
-    this.imagePath = imagePath;
+    this.source = imagePath;
     this.clicks = 0;
     this.timesShown = 0;
     //push variables into array
-    MallItems.allItems.push(this)
+    allItems.push(this)
 };
 
-//making constructor an array
-MallItems.allItems = [];
+let image1 = document.getElementById("img1");
+let image2 = document.getElementById("img2");
+let image3 = document.getElementById("img3");
 
-const renderItems = function(){
-        //use right/left global variables for the img and the p to stick the images on the page.
-    leftItemImg.src = leftItem.imagePath;
-    middleItemImg.src = middleItem.imagePath;
-    rightItemImg.src = rightItem.imagePath;
-    leftItemP.textContent = leftItem.item;
-    middleItemP.textContent = middleItem.item;
-    rightItemP.textContent = rightItem.item;
-};
+
 
 //randomly select picture
 function itemSelector(){
-    let leftIndex = Math.floor(Math.random() * MallItems.allItems.length)
-    let middleIndex = Math.floor(Math.random() * MallItems.allItems.length)
-    let rightIndex = Math.floor(Math.random() * MallItems.allItems.length)
+    let leftIndex = Math.floor(Math.random() * allItems.length)
+    let middleIndex = Math.floor(Math.random() * allItems.length)
+    let rightIndex = Math.floor(Math.random() * allItems.length)
 
 while (rightIndex === leftIndex || rightIndex === middleIndex) {
     rightIndex = Math.floor(Math.random() * MallItems.allItems.length)
 }
 
-leftItem = MallItems.allItems[leftIndex];
-middleItem = MallItems.allItems[middleIndex];
-rightItem = MallItems.allItems[rightIndex];
+leftItem = allItems[leftIndex];
+middleItem = allItems[middleIndex];
+rightItem = allItems[rightIndex];
 };
 
-
+function renderItems(){
+    //use right/left global variables for the img and the p to stick the images on the page.
+leftItemImg.src = leftItem.imagePath;
+middleItemImg.src = middleItem.imagePath;
+rightItemImg.src = rightItem.imagePath;
+leftItemP.textContent = leftItem.item;
+middleItemP.textContent = middleItem.item;
+rightItemP.textContent = rightItem.item;
+};
 
 function displayVotes(){
     results.innerHTML = '';
@@ -142,7 +132,4 @@ itemSelector();
 console.log('left item', leftItem)
 
 renderItems();
-
-
-
 
